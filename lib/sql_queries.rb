@@ -20,7 +20,9 @@ end
 
 def selects_most_prominent_color_and_returns_with_count
   # "SELECT color, COUNT(color) FROM bears GROUP BY color ORDER BY COUNT(color) DESC LIMIT 1"
-  "SELECT color, COUNT(color) AS count FROM bears GROUP BY color ORDER BY count DESC LIMIT 1"
+  # "SELECT color, COUNT(color) AS count FROM bears GROUP BY color ORDER BY count DESC LIMIT 1"
+  "SELECT TOP 1 color, COUNT(color) FROM bears GROUP BY color ORDER BY COUNT(color) DESC"
+  "SELECT TOp 1 app_rate_unit, COUNT(*) FROM dbo.well GROUP BY app_rate_unit ORDER BY COUNT(*) DESC"
 end
 
 def counts_number_of_bears_with_goofy_temperaments
